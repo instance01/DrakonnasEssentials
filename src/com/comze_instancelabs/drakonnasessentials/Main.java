@@ -10,6 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.comze_instancelabs.commands.Endercrystal;
 import com.comze_instancelabs.commands.Info;
 import com.comze_instancelabs.commands.Rocket;
+import com.comze_instancelabs.commands.fdstats;
 import com.comze_instancelabs.commands.motd;
 import com.comze_instancelabs.listener.DrakonnasShops;
 import com.comze_instancelabs.listener.Mainlistener;
@@ -48,6 +49,7 @@ public class Main extends JavaPlugin {
 		getCommand("motd").setExecutor(new motd(this));
 		getCommand("rocket").setExecutor(new Rocket(this));
 		getCommand("endercrystal").setExecutor(new Endercrystal(this));
+		getCommand("fdstats").setExecutor(new fdstats(this));
 		// listener
 		getLogger().info("Loading Listener..");
 		PluginManager pm = getServer().getPluginManager();
