@@ -42,7 +42,6 @@ public class Main extends JavaPlugin {
 		Utils.loadDrakonnasMotdConfiguration();
 		Utils.loadDrakonnasVoteConfiguration();
 		//commands
-		//TODO: add all commands into plugin.yml
 		getLogger().info("Loading commands..");
 		getCommand("info").setExecutor(new Info(this));
 		getCommand("version").setExecutor(new Info(this));

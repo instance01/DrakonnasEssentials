@@ -9,10 +9,30 @@ commands:
       permission: <plugin name>.info
       permission-message: You don't have permission!
       aliases: [version]
-commands:
    osinfo:
       description: Shows info about the server operating system.
       usage: /<command>
       permission: <plugin name>.osinfo
       permission-message: You don't have permission!
       aliases: [os]
+   motd:
+      description: Main DrakonnasMotd command
+      usage: /<command>
+      permission: <plugin name>.motd
+      permission-message: You don't have permission!
+   rocket:
+      description: Similar to Essentials rocket command
+      usage: /<command>
+      permission: <plugin name>.rocket
+      permission-message: You don't have permission!
+   endercrystal:
+      description: Spawns an endercrystal.
+      usage: /<command>
+      permission: <plugin name>.osinfo
+      permission-message: You don't have permission!
+      aliases: [ec]
+   fdstats:
+      description: DrakonnasFounddiamonds main command
+      usage: /<command>
+      permission: <plugin name>.osinfo
+      permission-message: You don't have permission!

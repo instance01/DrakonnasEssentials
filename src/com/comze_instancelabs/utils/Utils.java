@@ -9,6 +9,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 
+import com.comze_instancelabs.config.DrakonnasGodsConfig;
 import com.comze_instancelabs.config.DrakonnasMotdConfig;
 import com.comze_instancelabs.config.DrakonnasVoteConfig;
 import com.comze_instancelabs.config.Mainconfig;
@@ -69,6 +70,11 @@ public class Utils {
 		return m.getConfig();
 	}
 	
+	public static FileConfiguration loadDrakonnasGodsConfiguration(){
+		DrakonnasGodsConfig m = new DrakonnasGodsConfig();
+		return m.getConfig();
+	}
+	
 	public static FileConfiguration getDrakonnasMotdConfiguration(){
 		File file = new File("plugins/DrakonnasEssentials/", "drakonnasmotd.yml");
 		FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
@@ -81,16 +87,23 @@ public class Utils {
 		return cfg;
 	}
 	
+	public static FileConfiguration getDrakonnasGodsConfiguration(){
+		File file = new File("plugins/DrakonnasEssentials/", "drakonnasgods.yml");
+		FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
+		return cfg;
+	}
+	
 	public static void reloadConfiguration(File f){
 		FileConfiguration cfg = YamlConfiguration.loadConfiguration(f);
 		try {
 			cfg.load(f);
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			System.out.println("Error while reloading: File not found!");
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Error while reloading: " + e.getMessage());
 		} catch (InvalidConfigurationException e) {
-			e.printStackTrace();
+			System.out.println("Error while reloading: Invalid Configuration at " + f.getName());
 		}
 	}
 }
