@@ -34,6 +34,7 @@ public class Rocket implements CommandExecutor {
 			}else{
 				Player p = (Player)sender;
 				p.sendMessage("§2Usage: /rocket [player]");
+				return true;
 			}
 		}
 		

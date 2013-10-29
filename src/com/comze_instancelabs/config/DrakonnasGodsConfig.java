@@ -15,7 +15,6 @@ public class DrakonnasGodsConfig {
 		FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
 		config = cfg;
 		cfg.options().header("DrakonnasGods Configuration by InstanceLabs");
-		cfg.addDefault("config.broadcast", true);
 		
 		cfg.options().copyDefaults(true);
 		cfg.options().copyHeader(true);

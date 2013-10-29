@@ -106,4 +106,16 @@ public class Utils {
 			System.out.println("Error while reloading: Invalid Configuration at " + f.getName());
 		}
 	}
+	
+	public static void saveConfiguration(File f){
+		FileConfiguration cfg = YamlConfiguration.loadConfiguration(f);
+		try {
+			cfg.save(f);
+		} catch (FileNotFoundException e) {
+			//e.printStackTrace();
+			//System.out.println("Error while saving: File not found!");
+		} catch (IOException e) {
+			//System.out.println("Error while saving: " + e.getMessage());
+		}
+	}
 }

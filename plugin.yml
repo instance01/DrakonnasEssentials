@@ -36,3 +36,13 @@ commands:
       usage: /<command>
       permission: <plugin name>.osinfo
       permission-message: You don't have permission!
+   gods:
+      description: DrakonnasGods main command
+      usage: /<command>
+      permission: <plugin name>.gods
+      permission-message: You don't have permission!
+   votes:
+      description: DrakonnasVotes main command
+      usage: /<command>
+      permission: <plugin name>.votes
+      permission-message: You don't have permission!

@@ -8,10 +8,15 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.comze_instancelabs.commands.Endercrystal;
+import com.comze_instancelabs.commands.Gods;
 import com.comze_instancelabs.commands.Info;
+import com.comze_instancelabs.commands.OSInfo;
 import com.comze_instancelabs.commands.Rocket;
 import com.comze_instancelabs.commands.fdstats;
 import com.comze_instancelabs.commands.motd;
+import com.comze_instancelabs.commands.vote;
+import com.comze_instancelabs.listener.DrakonnasFounddiamonds;
+import com.comze_instancelabs.listener.DrakonnasGods;
 import com.comze_instancelabs.listener.DrakonnasShops;
 import com.comze_instancelabs.listener.Mainlistener;
 import com.comze_instancelabs.utils.Utils;
@@ -41,19 +46,24 @@ public class Main extends JavaPlugin {
 		FileConfiguration m = Utils.loadMainConfiguration();
 		Utils.loadDrakonnasMotdConfiguration();
 		Utils.loadDrakonnasVoteConfiguration();
+		Utils.loadDrakonnasGodsConfiguration();
 		//commands
 		getLogger().info("Loading commands..");
 		getCommand("info").setExecutor(new Info(this));
-		getCommand("version").setExecutor(new Info(this));
 		getCommand("motd").setExecutor(new motd(this));
 		getCommand("rocket").setExecutor(new Rocket(this));
 		getCommand("endercrystal").setExecutor(new Endercrystal(this));
 		getCommand("fdstats").setExecutor(new fdstats(this));
+		getCommand("gods").setExecutor(new Gods(this));
+		getCommand("osinfo").setExecutor(new OSInfo(this));
+		getCommand("votes").setExecutor(new vote(this));
 		// listener
 		getLogger().info("Loading Listener..");
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvents(new Mainlistener(this), this);
 		pm.registerEvents(new DrakonnasShops(econ, this), this);
+		pm.registerEvents(new DrakonnasFounddiamonds(this), this);
+		pm.registerEvents(new DrakonnasGods(this), this);
 		getLogger().info("Finished loading. Have fun!");
 		getLogger().info("**%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%**");
 	}

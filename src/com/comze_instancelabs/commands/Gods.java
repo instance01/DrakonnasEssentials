@@ -1,6 +1,7 @@
 package com.comze_instancelabs.commands;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -32,7 +33,7 @@ public class Gods implements CommandExecutor {
 								String godname = args[1];
 								Utils.getDrakonnasGodsConfiguration().set(godname + ".xp", Integer.parseInt(args[2]));
 								Utils.getDrakonnasGodsConfiguration().set(godname + ".potion", args[3]);
-								this.saveConfig();
+								Utils.saveConfiguration(new File(main.getDataFolder(), "drakonnasgods.yml"));
 								sender.sendMessage("§f[§3DrakonnasGods§f] §2A new God has been created!");	
 							}else{
 								sender.sendMessage("§4There's no such potion effect. Use §3/gods potioneffects §4to get a list.");
@@ -44,7 +45,7 @@ public class Gods implements CommandExecutor {
 						if(args.length > 1){
 							String godname = args[1];
 							Utils.getDrakonnasGodsConfiguration().set(godname, null);
-							this.saveConfig();
+							Utils.saveConfiguration(new File("plugins/DrakonnasEssentials/", "drakonnasgods.yml"));
 							sender.sendMessage("§f[§3DrakonnasGods§f] §2You removed " + godname + ".");
 						}
 					}else if(action.equalsIgnoreCase("potioneffects")){
@@ -56,7 +57,7 @@ public class Gods implements CommandExecutor {
 						if(args.length > 1){
 							String player = args[1];
 							Utils.getDrakonnasGodsConfiguration().set(player, null);
-							this.saveConfig();
+							Utils.saveConfiguration(new File("plugins/DrakonnasEssentials/", "drakonnasgods.yml"));
 							sender.sendMessage("§f[§3DrakonnasGods§f] §2Successfully reset " + player + "'s cooldown from the config.");
 						}
 					}else if(action.equalsIgnoreCase("list")){
