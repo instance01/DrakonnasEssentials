@@ -10,6 +10,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 
 import com.comze_instancelabs.config.DrakonnasMotdConfig;
+import com.comze_instancelabs.config.DrakonnasVoteConfig;
 import com.comze_instancelabs.config.Mainconfig;
 
 public class Utils {
@@ -61,6 +62,23 @@ public class Utils {
 	public static FileConfiguration loadDrakonnasMotdConfiguration(){
 		DrakonnasMotdConfig m = new DrakonnasMotdConfig();
 		return m.getConfig();
+	}
+	
+	public static FileConfiguration loadDrakonnasVoteConfiguration(){
+		DrakonnasVoteConfig m = new DrakonnasVoteConfig();
+		return m.getConfig();
+	}
+	
+	public static FileConfiguration getDrakonnasMotdConfiguration(){
+		File file = new File("plugins/DrakonnasEssentials/", "drakonnasmotd.yml");
+		FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
+		return cfg;
+	}
+	
+	public static FileConfiguration getDrakonnasVoteConfiguration(){
+		File file = new File("plugins/DrakonnasEssentials/", "drakonnasvote.yml");
+		FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
+		return cfg;
 	}
 	
 	public static void reloadConfiguration(File f){
