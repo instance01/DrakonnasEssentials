@@ -18,8 +18,13 @@ public class Endercrystal implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("ec") || cmd.getName().equalsIgnoreCase("endercrystal")) {
-			Player p = (Player) sender;
-			p.getWorld().spawn(p.getLocation(), EnderCrystal.class);
+			if(sender instanceof Player){
+				Player p = (Player) sender;
+				p.getWorld().spawn(p.getLocation(), EnderCrystal.class);	
+			}else{
+				sender.sendMessage("§4Please execute this command ingame!");
+			}
+			
 			return true;
 		}
 		return false;

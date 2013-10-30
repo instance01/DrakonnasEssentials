@@ -7,6 +7,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.comze_instancelabs.commands.Crash;
 import com.comze_instancelabs.commands.Endercrystal;
 import com.comze_instancelabs.commands.Gods;
 import com.comze_instancelabs.commands.Info;
@@ -18,8 +19,8 @@ import com.comze_instancelabs.commands.motd;
 import com.comze_instancelabs.commands.vote;
 import com.comze_instancelabs.listener.DrakonnasFounddiamonds;
 import com.comze_instancelabs.listener.DrakonnasGods;
-import com.comze_instancelabs.listener.DrakonnasShops;
 import com.comze_instancelabs.listener.DrakonnasMotd;
+import com.comze_instancelabs.listener.DrakonnasShops;
 import com.comze_instancelabs.utils.Utils;
 
 
@@ -69,6 +70,7 @@ public class Main extends JavaPlugin {
 			getCommand("votes").setExecutor(new vote(this));
 		}
 		getCommand("dhelp").setExecutor(new dhelp(this));
+		getCommand("crash").setExecutor(new Crash(this));
 		// listener
 		getLogger().info("Loading Listener..");
 		PluginManager pm = getServer().getPluginManager();

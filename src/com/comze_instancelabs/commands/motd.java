@@ -21,7 +21,6 @@ public class motd implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if(cmd.getName().equalsIgnoreCase("motd")){
-			Player p = (Player) sender;
 			if(args.length > 0){
 				String action = args[0];
 				if(action.equalsIgnoreCase("reload")){

@@ -21,6 +21,10 @@ public class Rocket implements CommandExecutor {
 		if(cmd.getName().equalsIgnoreCase("rocket")){
 			if(args.length > 0){
 				Player p = Bukkit.getPlayer(args[0]);
+				if(p == null){
+					sender.sendMessage("§4Player not found!"); 
+					return true;
+				}
 				
 				if(p.isOnline()){
 					//rocket
