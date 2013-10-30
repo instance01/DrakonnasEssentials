@@ -15,6 +15,7 @@ public class Mainconfig {
 		config = cfg;
 		cfg.options().header("DrakonnasEssentials Main Configuration by InstanceLabs");
 		cfg.addDefault("components.drakonnasmotd", true);
+		cfg.addDefault("components.drakonnasvotes", true);
 		cfg.addDefault("components.drakonnasgods", true);
 		cfg.addDefault("components.drakonnasfounddiamonds", true);
 		cfg.addDefault("components.drakonnasshops", true);

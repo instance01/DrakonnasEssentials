@@ -10,11 +10,11 @@ import org.bukkit.plugin.Plugin;
 
 import com.comze_instancelabs.utils.Utils;
 
-public class Mainlistener implements Listener {
+public class DrakonnasMotd implements Listener {
 
 	Plugin main = null;
 	
-	public Mainlistener(Plugin p){
+	public DrakonnasMotd(Plugin p){
 		main = p;
 	}
 	

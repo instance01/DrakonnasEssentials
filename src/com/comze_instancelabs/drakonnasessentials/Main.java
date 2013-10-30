@@ -19,7 +19,7 @@ import com.comze_instancelabs.commands.vote;
 import com.comze_instancelabs.listener.DrakonnasFounddiamonds;
 import com.comze_instancelabs.listener.DrakonnasGods;
 import com.comze_instancelabs.listener.DrakonnasShops;
-import com.comze_instancelabs.listener.Mainlistener;
+import com.comze_instancelabs.listener.DrakonnasMotd;
 import com.comze_instancelabs.utils.Utils;
 
 
@@ -45,24 +45,36 @@ public class Main extends JavaPlugin {
 		getLogger().info("Loading configuration..");
 		//TODO: disable components if disabled in main config
 		FileConfiguration m = Utils.loadMainConfiguration();
-		Utils.loadDrakonnasMotdConfiguration();
-		Utils.loadDrakonnasVoteConfiguration();
+		boolean drakonnasmotd = m.getBoolean("components.drakonnasmotd");
+		boolean drakonnasvotes = m.getBoolean("components.drakonnasvotes");
+		if(drakonnasmotd){
+			Utils.loadDrakonnasMotdConfiguration();
+		}
+		if(drakonnasvotes){
+			Utils.loadDrakonnasVoteConfiguration();
+		}
 		Utils.loadDrakonnasGodsConfiguration();
 		//commands
 		getLogger().info("Loading commands..");
 		getCommand("info").setExecutor(new Info(this));
-		getCommand("motd").setExecutor(new motd(this));
+		if(drakonnasmotd){
+			getCommand("motd").setExecutor(new motd(this));	
+		}
 		getCommand("rocket").setExecutor(new Rocket(this));
 		getCommand("endercrystal").setExecutor(new Endercrystal(this));
 		getCommand("fdstats").setExecutor(new fdstats(this));
 		getCommand("gods").setExecutor(new Gods(this));
 		getCommand("osinfo").setExecutor(new OSInfo(this));
-		getCommand("votes").setExecutor(new vote(this));
+		if(drakonnasvotes){
+			getCommand("votes").setExecutor(new vote(this));
+		}
 		getCommand("dhelp").setExecutor(new dhelp(this));
 		// listener
 		getLogger().info("Loading Listener..");
 		PluginManager pm = getServer().getPluginManager();
-		pm.registerEvents(new Mainlistener(this), this);
+		if(drakonnasmotd){
+			pm.registerEvents(new DrakonnasMotd(this), this);
+		}
 		pm.registerEvents(new DrakonnasShops(econ, this), this);
 		pm.registerEvents(new DrakonnasFounddiamonds(this), this);
 		pm.registerEvents(new DrakonnasGods(this), this);
