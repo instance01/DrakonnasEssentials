@@ -91,7 +91,7 @@ public class DrakonnasGods implements Listener {
 			        		SimpleDateFormat sdfToDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 			        		StringBuilder test = new StringBuilder(sdfToDate.format(new Date()));
 			        		Utils.getDrakonnasGodsConfiguration().set(event.getPlayer().getName() + ".hoursleft", test.toString());
-			        		Utils.saveConfiguration(new File("plugins/DrakonnasEssentials/", "drakonnasgods.yml"));
+			        		Utils.saveDrakonnasGodsConfiguration();			        		
 			        		//event.getPlayer().giveExp(Utils.getDrakonnasGodsConfiguration().getInt(godname + ".xp"));
 			        		main.getServer().dispatchCommand(main.getServer().getConsoleSender(), "enjin addpoints " + event.getPlayer().getName() + " " + Integer.toString(Utils.getDrakonnasGodsConfiguration().getInt(godname + ".xp")));
 			        		//PotionEffect speed = PotionEffectType.SPEED.createEffect(99999999, 7);
@@ -106,7 +106,7 @@ public class DrakonnasGods implements Listener {
 			        			SimpleDateFormat sdfToDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 			        			StringBuilder test = new StringBuilder(sdfToDate.format(new Date()));
 				        		Utils.getDrakonnasGodsConfiguration().set(event.getPlayer().getName() + ".hoursleft", test.toString());
-				        		Utils.saveConfiguration(new File("plugins/DrakonnasEssentials/", "drakonnasgods.yml"));
+				        		Utils.saveDrakonnasGodsConfiguration();				        		
 				        		PotionEffect speed = PotionEffectType.getByName(Utils.getDrakonnasGodsConfiguration().getString(godname + ".potion")).createEffect(12000, 1);
 					            event.getPlayer().addPotionEffect(speed, true);
 					            event.getPlayer().playEffect(event.getPlayer().getLocation(), Effect.POTION_BREAK, 5);

@@ -8,7 +8,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 public class DrakonnasGodsConfig {
 	
-	FileConfiguration config = null;
+	public static FileConfiguration config = null;
 	
 	public DrakonnasGodsConfig() {
 		File file = new File("plugins/DrakonnasEssentials/", "drakonnasgods.yml");
@@ -24,7 +24,15 @@ public class DrakonnasGodsConfig {
 		}
 	}
 	
-	public FileConfiguration getConfig(){
+	public static FileConfiguration getConfig(){
 		return config;
+	}
+	
+	public static void saveConfig(){
+		try {
+			config.save(new File("plugins/DrakonnasEssentials/", "drakonnasgods.yml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

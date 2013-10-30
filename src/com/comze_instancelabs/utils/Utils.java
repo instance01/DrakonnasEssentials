@@ -90,7 +90,11 @@ public class Utils {
 	public static FileConfiguration getDrakonnasGodsConfiguration(){
 		File file = new File("plugins/DrakonnasEssentials/", "drakonnasgods.yml");
 		FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
-		return cfg;
+		return DrakonnasGodsConfig.getConfig();
+	}
+	
+	public static void saveDrakonnasGodsConfiguration(){
+		DrakonnasGodsConfig.saveConfig();
 	}
 	
 	public static void reloadConfiguration(File f){
