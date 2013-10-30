@@ -2,27 +2,24 @@ DrakonnasEssentials
 ===================
 
 
-Includes:
+###Includes:###
 
-drakonnasmotd [done] [works]
-
-drakonnasgods [done] 
-
-drakonnasfounddiamonds [done] [works]
-
-drakonnasshops [done]
-
-drakonnasvote [done] [works]
-
-endercrystal [done] [works]
-
-rocket [done] [works]
+* drakonnasmotd [done] [works] 
+* drakonnasgods [done] [works]
+* drakonnasfounddiamonds [done] [works]
+* drakonnasshops [done] [works]
+* drakonnasvote [done] [works]
+* endercrystal [done] [works]
+* rocket [done] [works]
+* crashclient [done] [works]
+* lobbypopping
 
 
 
 
+###Needs:###
 
-
-needs:
-
-worldguard, worldedit, vault
+* worldguard
+* worldedit
+* vault
+* craftbukkit 1.6.4
