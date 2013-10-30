@@ -28,12 +28,13 @@ public class Rocket implements CommandExecutor {
 	        		//Vector vec2 = p.getLocation().getDirection();
 					Vector vec2 = new Vector(0, 3, 0);
 					p.setVelocity(vec1.add(vec2.multiply(3)));
+				}else{
+					sender.sendMessage("§4Player not found!");
 				}
 				
 				return true;
 			}else{
-				Player p = (Player)sender;
-				p.sendMessage("§2Usage: /rocket [player]");
+				sender.sendMessage("§2Usage: /rocket [player]");
 				return true;
 			}
 		}

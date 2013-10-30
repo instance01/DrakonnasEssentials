@@ -7,19 +7,17 @@ import org.bukkit.plugin.Plugin;
 
 import com.comze_instancelabs.utils.Utils;
 
-public class Info implements CommandExecutor {
+public class dhelp implements CommandExecutor {
 
 	Plugin main = null;
 	
-	public Info(Plugin p){
+	public dhelp(Plugin p){
 		main = p;
 	}
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if(cmd.getName().equalsIgnoreCase("version") || cmd.getName().equalsIgnoreCase("info")){ 
-			sender.sendMessage(Utils.getVersionInfo(main).toString());
-			sender.sendMessage(Utils.newline);
+		if(cmd.getName().equalsIgnoreCase("dhelp") || cmd.getName().equalsIgnoreCase("drakonnashelp")){ 
 			sender.sendMessage(Utils.getHelp(main).toString());
 			return true;
 		}

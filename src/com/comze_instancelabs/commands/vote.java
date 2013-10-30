@@ -22,7 +22,6 @@ public class vote implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if(cmd.getName().equalsIgnoreCase("votes")){
-			Player p = (Player) sender;
 			if(args.length > 0){
 				String action = args[0];
 				if(action.equalsIgnoreCase("info")){
@@ -30,7 +29,7 @@ public class vote implements CommandExecutor {
 			        keys.addAll(Utils.getDrakonnasVoteConfiguration().getKeys(false));
 			        keys.remove("link");
 			        for(int i = 0; i < keys.size(); i++){
-			            p.sendMessage(Utils.getDrakonnasVoteConfiguration().getString("info" + Integer.toString(i)));
+			            sender.sendMessage(Utils.getDrakonnasVoteConfiguration().getString("info" + Integer.toString(i)));
 			        }
 				}else if(action.equalsIgnoreCase("reload")){
 					if(sender.hasPermission("votes.reload")){
@@ -45,7 +44,7 @@ public class vote implements CommandExecutor {
 		        keys.addAll(Utils.getDrakonnasVoteConfiguration().getKeys(false));
 		        keys.remove("link");
 		        for(int i = 0; i < keys.size(); i++){
-		            p.sendMessage(Utils.getDrakonnasVoteConfiguration().getString("info" + Integer.toString(i)));
+		        	sender.sendMessage(Utils.getDrakonnasVoteConfiguration().getString("info" + Integer.toString(i)));
 		        }
 			}
         	

@@ -20,7 +20,7 @@ public class fdstats implements CommandExecutor {
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if(cmd.getName().equalsIgnoreCase("fdstats") && args.length > 0){
+		if(cmd.getName().equalsIgnoreCase("fdstats")){
 			if(args.length > 0){
 				sender.sendMessage("§3Statistics for " +  args[0] +  "'s session:");
 				Player p = Bukkit.getPlayer(args[0]);

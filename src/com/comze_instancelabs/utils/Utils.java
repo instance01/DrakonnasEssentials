@@ -36,21 +36,21 @@ public class Utils {
 		n.append("§3OS Name: " + osname + newline);
 		n.append("§3OS Arch: " + osarch + newline);
 		n.append("§3OS Version: " + osversion + newline);
-		n.append("§3Java Version: " + java_version + newline);
+		n.append("§3Java Version: " + java_version);
 		return n;
 	}
 	
 	public static StringBuilder getAllCommands(Plugin p){
 		StringBuilder n = new StringBuilder();
 		for(String cmd : p.getDescription().getCommands().keySet()){
-			n.append("§a" + cmd + " §7| " + p.getDescription().getCommands().get(cmd).toString() + newline);
+			n.append("§a" + cmd + " §7| " + p.getDescription().getCommands().get(cmd).get("description") + newline);
 		}
 		return n;
 	}
 	
 	public static StringBuilder getHelp(Plugin p){
 		StringBuilder n = new StringBuilder();
-		n.append("§3DrakonnasEssentials Help: ");
+		n.append("§3DrakonnasEssentials Help: " + newline);
 		n.append(getAllCommands(p));
 		return n;
 	}

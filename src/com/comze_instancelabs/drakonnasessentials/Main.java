@@ -12,6 +12,7 @@ import com.comze_instancelabs.commands.Gods;
 import com.comze_instancelabs.commands.Info;
 import com.comze_instancelabs.commands.OSInfo;
 import com.comze_instancelabs.commands.Rocket;
+import com.comze_instancelabs.commands.dhelp;
 import com.comze_instancelabs.commands.fdstats;
 import com.comze_instancelabs.commands.motd;
 import com.comze_instancelabs.commands.vote;
@@ -57,6 +58,7 @@ public class Main extends JavaPlugin {
 		getCommand("gods").setExecutor(new Gods(this));
 		getCommand("osinfo").setExecutor(new OSInfo(this));
 		getCommand("votes").setExecutor(new vote(this));
+		getCommand("dhelp").setExecutor(new dhelp(this));
 		// listener
 		getLogger().info("Loading Listener..");
 		PluginManager pm = getServer().getPluginManager();

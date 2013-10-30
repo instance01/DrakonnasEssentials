@@ -46,3 +46,9 @@ commands:
       usage: /<command>
       permission: <plugin name>.votes
       permission-message: You don't have permission!
+   dhelp:
+      description: DrakonnasEssentials help.
+      usage: /<command>
+      permission: <plugin name>.dhelp
+      permission-message: You don't have permission!
+      aliases: [drakonnashelp]
